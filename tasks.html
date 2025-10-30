@@ -21,84 +21,47 @@
 
     <div class="container">
         <h2 class="section-title">দায়িত্ব বন্টন</h2>
-
-        <div class="task-nav">
-            <button class="active" data-tab="daily-work">দৈনন্দিন কাজ</button>
-            <button data-tab="special-duty">বিশেষ দায়িত্ব</button>
-        </div>
-
-        <!-- Daily Work Content -->
-        <div id="daily-work" class="task-content active">
-            <h3 class="task-subtitle">আজকের কাজ: খাবার বন্টন এবং ময়লার ঝুড়ি পরিষ্কার</h3>
-            <div class="task-group-list">
-                <!-- Group 1 -->
-                <div class="task-group-item" data-group-id="0">
-                    <div class="task-group-header">
-                        <span>প্রথম গ্রুপ</span>
-                        <span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span>
+        
+        <!-- Daily Work Section -->
+        <div id="daily-work">
+             <div class="task-columns-container">
+                <!-- Column 1: Food -->
+                <div class="task-column">
+                    <h3>খাবার বন্টন</h3>
+                    <div class="task-group-list">
+                        <div class="task-group-item" data-group-id="0"><div class="task-group-header">প্রথম গ্রুপ</div><ul class="task-group-members"><li>IMRAN MRIDHA (লিডার)</li><li>MD. RAJEUL KARIM</li><li>MD NAJMUL HOSEN</li></ul></div>
+                        <div class="task-group-item" data-group-id="1"><div class="task-group-header">দ্বিতীয় গ্রুপ</div><ul class="task-group-members"><li>SADIK MURSALIN (লিডার)</li><li>OMAR SIKDER</li><li>MD NAZMUL ALAM</li></ul></div>
+                        <div class="task-group-item" data-group-id="2"><div class="task-group-header">তৃতীয় গ্রুপ</div><ul class="task-group-members"><li>MAHMUD BIN MOIN (লিডার)</li><li>IQBAL HUSSAIN</li><li>ABDUR RAHMAN</li></ul></div>
+                        <div class="task-group-item" data-group-id="3"><div class="task-group-header">চতুর্থ গ্রুপ</div><ul class="task-group-members"><li>AZIZUL HAQ HASIB (লিডার)</li><li>RIDAY HASAN MAMUN</li><li>AL-AMIN</li></ul></div>
+                        <div class="task-group-item" data-group-id="4"><div class="task-group-header">পঞ্চম গ্রুপ</div><ul class="task-group-members"><li>MUHAMMAD SAFWAN AHMAD (লিডার)</li><li>MD. KAMAL HOSSAIN</li><li>MD. MASUM BILLAH</li></ul></div>
+                        <div class="task-group-item" data-group-id="5"><div class="task-group-header">ষষ্ঠ গ্রুপ</div><ul class="task-group-members"><li>MARUFUR RAHMAN (লিডার)</li><li>MD MAHMUDUL HASAN SAGOR</li><li>FAHAD TALUKDER</li></ul></div>
                     </div>
-                    <ul class="task-group-members">
-                        <li>IMRAN MRIDHA (লিডার)</li>
-                        <li>MD. RAJEUL KARIM</li>
-                        <li>MD NAJMUL HOSEN</li>
-                        <li>MD. SELIM REZA</li>
-                        <li>MD A RAZZAK</li>
-                        <li>RIYAD HOSSAIN</li>
-                        <li>MD.FOYSAL MIA</li>
-                    </ul>
                 </div>
-                 <!-- Group 2 -->
-                <div class="task-group-item" data-group-id="1">
-                    <div class="task-group-header">
-                        <span>দ্বিতীয় গ্রুপ</span>
-                        <span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span>
+                <!-- Column 2: Cleaning -->
+                <div class="task-column">
+                    <h3>ময়লার ঝুড়ি পরিষ্কার</h3>
+                    <div class="task-group-list">
+                         <div class="task-group-item" data-group-id="0"><div class="task-group-header">প্রথম গ্রুপ</div><ul class="task-group-members"><li>IMRAN MRIDHA (লিডার)</li><li>MD. RAJEUL KARIM</li><li>MD NAJMUL HOSEN</li></ul></div>
+                        <div class="task-group-item" data-group-id="1"><div class="task-group-header">দ্বিতীয় গ্রুপ</div><ul class="task-group-members"><li>SADIK MURSALIN (লিডার)</li><li>OMAR SIKDER</li><li>MD NAZMUL ALAM</li></ul></div>
+                        <div class="task-group-item" data-group-id="2"><div class="task-group-header">তৃতীয় গ্রুপ</div><ul class="task-group-members"><li>MAHMUD BIN MOIN (লিডার)</li><li>IQBAL HUSSAIN</li><li>ABDUR RAHMAN</li></ul></div>
+                        <div class="task-group-item" data-group-id="3"><div class="task-group-header">চতুর্থ গ্রুপ</div><ul class="task-group-members"><li>AZIZUL HAQ HASIB (লিডার)</li><li>RIDAY HASAN MAMUN</li><li>AL-AMIN</li></ul></div>
+                        <div class="task-group-item" data-group-id="4"><div class="task-group-header">পঞ্চম গ্রুপ</div><ul class="task-group-members"><li>MUHAMMAD SAFWAN AHMAD (লিডার)</li><li>MD. KAMAL HOSSAIN</li><li>MD. MASUM BILLAH</li></ul></div>
+                        <div class="task-group-item" data-group-id="5"><div class="task-group-header">ষষ্ঠ গ্রুপ</div><ul class="task-group-members"><li>MARUFUR RAHMAN (লিডার)</li><li>MD MAHMUDUL HASAN SAGOR</li><li>FAHAD TALUKDER</li></ul></div>
                     </div>
-                    <ul class="task-group-members">
-                        <li>SADIK MURSALIN (লিডার)</li>
-                        <li>OMAR SIKDER</li>
-                        <li>MD NAZMUL ALAM</li>
-                        <li>ABDULLAH AL MAMUN</li>
-                        <li>MD AHMADULLAH KHAN</li>
-                        <li>AMRAN HOSSAN</li>
-                        <li>MD KAWSAR AHMED</li>
-                    </ul>
                 </div>
-                <!-- Groups 3-6 will be added similarly -->
-                <div class="task-group-item" data-group-id="2"><div class="task-group-header"><span>তৃতীয় গ্রুপ</span><span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MAHMUD BIN MOIN (লিডার)</li><li>IQBAL HUSSAIN</li><li>ABDUR RAHMAN</li><li>MD AZAHAR MIA</li><li>HUSAIN AHMED JAMAL</li><li>ABDUR RAHMAN</li><li>ISHTIAQUE</li></ul></div>
-                <div class="task-group-item" data-group-id="3"><div class="task-group-header"><span>চতুর্থ গ্রুপ</span><span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>AZIZUL HAQ HASIB (লিডার)</li><li>RIDAY HASAN MAMUN</li><li>AL-AMIN</li><li>SAHED UDDIN</li><li>MD. ALAM MIA</li><li>SAZZAK HOSSAIN SHANTO</li></ul></div>
-                <div class="task-group-item" data-group-id="4"><div class="task-group-header"><span>পঞ্চম গ্রুপ</span><span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MUHAMMAD SAFWAN AHMAD (লিডার)</li><li>MD. KAMAL HOSSAIN</li><li>MD. MASUM BILLAH</li><li>SHOEB AKTER DRISSO</li><li>FOKIR SAKIB</li><li>MD.SHEKH FORID</li><li>MD MEJU BABU</li></ul></div>
-                <div class="task-group-item" data-group-id="5"><div class="task-group-header"><span>ষষ্ঠ গ্রুপ</span><span class="duty-indicator">আজ দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MARUFUR RAHMAN (লিডার)</li><li>MD MAHMUDUL HASAN SAGOR</li><li>FAHAD TALUKDER</li><li>MD. MEHERAB HOSSEN MAHI</li><li>MD. KAUSAR ALI</li><li>MD. RUHUL AMIN</li><li>MD. RAHAT HUSSAIN</li></ul></div>
             </div>
         </div>
-
-        <!-- Special Duty Content -->
-        <div id="special-duty" class="task-content">
-            <h3 class="task-subtitle">সাপ্তাহিক কাজ: ওয়াশরুম ও মসজিদ পরিষ্কার (প্রতি ৬ সপ্তাহ পর)</h3>
-            <div class="task-group-list">
-                <!-- Groups repeated for this section -->
-                 <div class="task-group-item" data-group-id="0"><div class="task-group-header"><span>প্রথম গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>IMRAN MRIDHA (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-                <div class="task-group-item" data-group-id="1"><div class="task-group-header"><span>দ্বিতীয় গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>SADIK MURSALIN (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-                <div class="task-group-item" data-group-id="2"><div class="task-group-header"><span>তৃতীয় গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MAHMUD BIN MOIN (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-                <div class="task-group-item" data-group-id="3"><div class="task-group-header"><span>চতুর্থ গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>AZIZUL HAQ HASIB (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-                <div class="task-group-item" data-group-id="4"><div class="task-group-header"><span>পঞ্চম গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MUHAMMAD SAFWAN AHMAD (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-                <div class="task-group-item" data-group-id="5"><div class="task-group-header"><span>ষষ্ঠ গ্রুপ</span><span class="duty-indicator">এই সপ্তাহে দায়িত্বপ্রাপ্ত</span></div><ul class="task-group-members"><li>MARUFUR RAHMAN (লিডার)</li><li>...সদস্যদের নাম...</li></ul></div>
-            </div>
-        </div>
-
+        
         <!-- Notice Board Section -->
         <section class="notice-board-section">
             <h2 class="section-title">নোটিশ বোর্ড</h2>
             <div class="notice-board">
                 <div class="notice-content">
                     <h2>আজকের ঘোষণা</h2>
-                    <!-- এই প্যারাগ্রাফের ভেতরের লেখা পরিবর্তন করলেই নোটিশ আপডেট হবে -->
-                    <p>
-                        সকল ছাত্রদের জানানো যাচ্ছে যে, আগামীকাল সকাল ১০টায় একটি বিশেষ ক্লাসের আয়োজন করা হয়েছে। সকলের উপস্থিতি বাধ্যতামূলক।
-                    </p>
+                    <p>সকল ছাত্রদের জানানো যাচ্ছে যে, আগামীকাল সকাল ১০টায় একটি বিশেষ ক্লাসের আয়োজন করা হয়েছে। সকলের উপস্থিতি বাধ্যতামূলক।</p>
                 </div>
             </div>
         </section>
-
     </div>
 
     <script src="script.js"></script>
