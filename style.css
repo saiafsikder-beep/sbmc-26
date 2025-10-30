@@ -1,7 +1,6 @@
-/* Google Fonts - Hind Siliguri for Bengali Text */
+/* Google Fonts & Font Awesome Icons */
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
 
 /* --- Root Variables (আপনার দেওয়া কালার কোড) --- */
 :root {
@@ -46,7 +45,7 @@ body {
 .main-header p { font-size: clamp(1rem, 2.5vw, 1.4rem); opacity: 0.9; }
 
 /* --- Homepage Quotes & About --- */
-.quotes-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 60px; }
+.quotes-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 60px 0; }
 .quote-card { background-color: var(--card-bg); border-left: 5px solid var(--primary-green); padding: 25px; width: 300px; box-shadow: var(--shadow); transition: transform 0.3s ease; }
 .quote-card:hover { transform: translateY(-10px); }
 .about-us p { font-size: 1.2rem; font-style: italic; text-align: center; line-height: 2; background-color: #f9f9f9; padding: 30px; border-radius: 8px; }
@@ -55,32 +54,32 @@ body {
 @keyframes jumpIn { 0% { opacity: 0; transform: translateY(30px) scale(0.9); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 .student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 35px; }
 .door-card { width: 100%; height: 350px; position: relative; perspective: 1200px; cursor: pointer; }
-.door-card .door { position: absolute; width: 50%; height: 100%; background-color: var(--dark-green); border: 3px solid var(--gold); transition: transform 0.8s ease-in-out; z-index: 10; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.door-card .door { position: absolute; width: 50%; height: 100%; background-color: var(--dark-green); border: 3px solid var(--gold); transition: transform 0.8s ease-in-out; z-index: 10; }
 .door-card .door.left { left: 0; border-radius: 10px 0 0 10px; transform-origin: left; }
 .door-card .door.right { right: 0; border-radius: 0 10px 10px 0; transform-origin: right; }
 .door-card.is-open .door.left { transform: rotateY(-140deg); }
 .door-card.is-open .door.right { transform: rotateY(140deg); }
-.door-front-content { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 11; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; pointer-events: none; }
+.door-front-content { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 11; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; pointer-events: none; transition: opacity 0.3s ease; }
+.door-card.is-open .door-front-content { opacity: 0; }
 .student-photo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--gold); object-fit: cover; }
 .student-name { color: white; font-size: 1.5rem; font-weight: 600; text-align: center; margin-top: 15px; }
 .student-roll { color: var(--light-green); font-size: 1rem; }
-.door-content { position: absolute; width: 100%; height: 100%; background-color: var(--primary-green); border-radius: 10px; box-shadow: var(--shadow); padding: 20px; display: flex; align-items: center; justify-content: center; }
-.door-content .info { color: white; text-align: center; opacity: 0; transition: opacity 0.5s ease; }
-.door-card.is-open .door-content .info { opacity: 1; animation: jumpIn 0.6s ease-out forwards; animation-delay: 0.4s; }
-.door-content h4 { font-size: 1.6rem; margin: 0 0 15px 0; }
-.door-content p { margin: 6px 0; font-size: 1rem; }
-.social-links { margin-top: 20px; display: flex; gap: 20px; justify-content: center; }
+.door-content { position: absolute; width: 100%; height: 100%; background-color: var(--primary-green); border-radius: 10px; box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.door-content .info-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); transform: translateY(150%); transition: transform 0.6s ease-out; }
+.door-card.is-open .info-photo { transform: translateY(0); transition-delay: 0.4s; }
+.door-content .info { color: white; text-align: center; opacity: 0; transition: opacity 0.5s ease; transform: translateY(100%); }
+.door-card.is-open .info { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.door-content h4 { font-size: 1.6rem; margin: 10px 0 10px 0; }
+.door-content p { margin: 4px 0; font-size: 0.9rem; }
+.social-links { margin-top: 15px; display: flex; gap: 20px; justify-content: center; }
 .social-links a { color: white; font-size: 1.8rem; text-decoration: none; transition: transform 0.2s ease; }
-.social-links a:hover { transform: scale(1.2); }
-
+.social-links a:hover { transform: scale(1.2); color: var(--gold); }
 
 /* --- Group Page Styling --- */
 .leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
 .leader-card { background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); border-top: 5px solid var(--gold); transition: transform 0.3s ease; }
-.leader-card:hover { transform: scale(1.05); }
 .group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 .group-box { background: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; transition: transform 0.3s ease; }
-.group-box:hover { transform: translateY(-10px); }
 .group-header { background-color: var(--primary-green); color: white; padding: 20px; text-align: center; }
 .group-members { list-style: none; padding: 20px; margin: 0; }
 .group-members li { padding: 12px; border-bottom: 1px solid #eee; font-size: 1.1rem; transition: all 0.3s ease; }
@@ -91,19 +90,19 @@ body {
 .task-columns-container { display: flex; flex-wrap: wrap; gap: 30px; }
 .task-column { flex: 1; min-width: 300px; background-color: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #eee; }
 .task-column h3 { text-align: center; color: var(--primary-green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
-@keyframes intense-pulse { 0% { box-shadow: 0 0 0 0 var(--gold); transform: scale(1); } 50% { transform: scale(1.02); } 70% { box-shadow: 0 0 0 15px rgba(232, 181, 93, 0); } 100% { box-shadow: 0 0 0 0 rgba(232, 181, 93, 0); transform: scale(1); } }
+@keyframes intense-pulse { 0% { box-shadow: 0 0 0 0 var(--gold); } 70% { box-shadow: 0 0 0 15px rgba(232, 181, 93, 0); } 100% { box-shadow: 0 0 0 0 rgba(232, 181, 93, 0); } }
 .task-group-item { background: #fafafa; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; }
 .task-group-header { padding: 15px; font-size: 1.3rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
 .task-group-item.on-duty { border: 2px solid var(--gold); animation: intense-pulse 1.8s infinite; }
 .task-group-item.on-duty .task-group-header { background-color: var(--dark-green); color: white; }
-.task-group-members { list-style-type: '✔'; padding: 0 20px 0 40px; margin: 0; max-height: 0; overflow: hidden; transition: all 0.7s ease-out; }
+.task-group-members { list-style-type: '✔  '; padding: 0 20px 0 40px; margin: 0; max-height: 0; overflow: hidden; transition: all 0.7s ease-out; }
 .task-group-members li { padding: 10px 5px; border-top: 1px solid #eee; }
 .notice-board-section { margin-top: 60px; }
 .notice-board { padding: 20px; background-color: #f3e9d2; border: 10px solid #8a6d3b; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); text-align: center; }
 
-/* --- Memory Album Page (FINAL VERSION) --- */
+/* --- Memory Album Page --- */
 .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
-.memory-box { background-color: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); display: flex; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 5px solid var(--primary-green); }
+.memory-box { background-color: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); display: flex; padding: 20px; transition: all 0.3s ease; border-left: 5px solid var(--primary-green); }
 .memory-box:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(15, 41, 32, 0.15); }
 .memory-person { flex: 0 0 120px; text-align: center; padding-right: 20px; border-right: 2px dashed var(--gold); }
 .memory-person img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-green); margin-bottom: 10px; }
