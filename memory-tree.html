@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBMC-26 | স্মৃতিবৃক্ষ</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><img src="./images/s-logo.png" alt="SBMC-26 Logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="groups.html">আমাদের গ্রুপ</a></li>
+            <li><a href="tasks.html">দৈনন্দিন কাজ</a></li>
+            <li><a href="memory-tree.html" class="active">স্মৃতিবৃক্ষ</a></li>
+        </ul>
+    </nav>
+
+    <div class="memory-tree-container">
+        
+        <!-- Tree SVG Background -->
+        <svg class="tree" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- This is a simple placeholder tree. You can find a more detailed SVG online. -->
+            <path d="M400 600 V300 M300 400 C350 350, 350 250, 400 300" stroke="#5C3D2E" stroke-width="20" fill="none"/>
+            <path d="M400 300 C450 250, 450 350, 500 400" stroke="#5C3D2E" stroke-width="20" fill="none"/>
+            <path d="M400 250 C350 200, 300 200, 250 250" stroke="#5C3D2E" stroke-width="15" fill="none"/>
+             <path d="M400 250 C450 200, 500 200, 550 250" stroke="#5C3D2E" stroke-width="15" fill="none"/>
+        </svg>
+
+        <!-- Leaves -->
+        <!-- Teachers (Top) -->
+        <div class="leaf" style="top: 20%; left: 30%;" data-quote="শিক্ষাই জাতির মেরুদণ্ড।" data-author="শিক্ষক ১ (পদবী)">
+            <img src="./images/student-placeholder.png" alt="Teacher">
+            <span class="tooltip">শিক্ষক ১<br>পদবী</span>
+        </div>
+         <div class="leaf" style="top: 22%; left: 65%;" data-quote="চেষ্টা করলে সবই সম্ভব।" data-author="শিক্ষক ২ (পদবী)">
+            <img src="./images/student-placeholder.png" alt="Teacher">
+            <span class="tooltip">শিক্ষক ২<br>পদবী</span>
+        </div>
+
+        <!-- Students (Middle/Bottom) -->
+        <div class="leaf" style="top: 45%; left: 20%;" data-quote="বন্ধুত্বই আমাদের শক্তি।" data-author="ছাত্র ১">
+            <img src="./images/student-placeholder.png" alt="Student">
+            <span class="tooltip">ছাত্র ১<br>SBMC-26</span>
+        </div>
+         <div class="leaf" style="top: 50%; left: 75%;" data-quote="এই দিনগুলো ভোলার নয়।" data-author="ছাত্র ২">
+            <img src="./images/student-placeholder.png" alt="Student">
+            <span class="tooltip">ছাত্র ২<br>SBMC-26</span>
+        </div>
+        <div class="leaf" style="top: 60%; left: 45%;" data-quote="একসাথে পথচলা সবে শুরু।" data-author="ছাত্র ৩">
+            <img src="./images/student-placeholder.png" alt="Student">
+            <span class="tooltip">ছাত্র ৩<br>SBMC-26</span>
+        </div>
+        <!-- Add more leaves by copying the div and changing style, data-quote, data-author -->
+
+    </div>
+
+    <!-- Modal for displaying quotes -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modalQuote" style="font-size: 1.5em; font-style: italic;"></p>
+            <h4 id="modalAuthor" style="font-size: 1.2em;"></h4>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
