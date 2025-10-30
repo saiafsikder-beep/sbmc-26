@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (doorCards.length) {
         doorCards.forEach(card => {
             card.addEventListener('click', () => {
+                // Close other open cards before opening the new one
+                doorCards.forEach(c => {
+                    if (c !== card && c.classList.contains('is-open')) {
+                        c.classList.remove('is-open');
+                    }
+                });
+                // Toggle the clicked card
                 card.classList.toggle('is-open');
             });
         });
@@ -15,20 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        // Daily Logic: Thursday is the 5th group's turn.
-        // Day indices: Sun=0, Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6
-        // Group indices: Group 1=0, Group 2=1, ..., Group 6=5
-        const referenceDay = 4; // Thursday
+        // Daily Logic: Friday is the 5th group's turn.
+        const referenceDay = 5; // Friday (0=Sun, ..., 6=Sat)
         const referenceGroupIndex = 4; // Group 5 (0-indexed)
         
         const today = new Date();
         const todayDayIndex = today.getDay();
         
         let dayDifference = todayDayIndex - referenceDay;
-        const dutyGroupIndex = (referenceGroupIndex + dayDifference + 6) % 6;
+        const dutyGroupIndex = (referenceGroupIndex + dayDifference + 7) % 6; // Use 7 to handle negative mods
 
         const taskColumns = container.querySelectorAll('.task-column');
-        if (taskColumns.length === 0) return;
         
         taskColumns.forEach(column => {
             const taskGroups = column.querySelectorAll('.task-group-item');
