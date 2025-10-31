@@ -54,9 +54,29 @@ body {
 @keyframes jumpIn { 0% { opacity: 0; transform: translateY(30px) scale(0.9); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 .student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 35px; }
 .door-card { width: 100%; height: 350px; position: relative; perspective: 1200px; cursor: pointer; }
-.door-card .door { position: absolute; width: 50%; height: 100%; background-color: var(--dark-green); border: 3px solid var(--gold); transition: transform 0.8s ease-in-out; z-index: 10; }
-.door-card .door.left { left: 0; border-radius: 10px 0 0 10px; transform-origin: left; }
-.door-card .door.right { right: 0; border-radius: 0 10px 10px 0; transform-origin: right; }
+/* --- উপরের পুরনো কোড মুছে এই নতুন কোডটুকু বসাও --- */
+
+.door-card .door {
+    position: absolute;
+    width: 50.5%; /* সামান্য ওভারল্যাপ করার জন্য */
+    height: 100%;
+    background-color: var(--dark-green);
+    border: 3px solid var(--gold);
+    transition: transform 0.8s ease-in-out;
+    z-index: 10;
+}
+.door-card .door.left {
+    left: 0;
+    border-radius: 10px 0 0 10px;
+    transform-origin: left;
+    border-right: none; /* ডান পাশের বর্ডার মুছে দেওয়া হলো */
+}
+.door-card .door.right {
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    transform-origin: right;
+    border-left: none; /* বাম পাশের বর্ডার মুছে দেওয়া হলো */
+}
 .door-card.is-open .door.left { transform: rotateY(-140deg); }
 .door-card.is-open .door.right { transform: rotateY(140deg); }
 .door-front-content { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 11; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; pointer-events: none; transition: opacity 0.3s ease; }
@@ -107,3 +127,4 @@ body {
 .memory-person { flex: 0 0 120px; text-align: center; padding-right: 20px; border-right: 2px dashed var(--gold); }
 .memory-person img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-green); margin-bottom: 10px; }
 .memory-quote { padding-left: 20px; font-size: 1.1rem; font-style: italic; display: flex; align-items: center; }
+
