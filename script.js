@@ -18,28 +18,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Tasks Page Accordion and Duty Highlighting ---
-    function setupTasks(containerId) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
+    /* --- উপরের পুরনো ফাংশনটি মুছে এই নতুন ফাংশনটি বসিয়ে দাও --- */
 
-        // Daily Logic: Friday is today, so group 5 is on duty.
-        const referenceDay = 5; // Friday (0=Sun, ..., 6=Sat)
-        const referenceGroupIndex = 4; // Group 5 (0-indexed)
-        
-        const today = new Date();
-        const todayDayIndex = today.getDay();
-        
-        let dayDifference = todayDayIndex - referenceDay;
-        const dutyGroupIndex = (referenceGroupIndex + dayDifference + 7) % 7; 
+function setupTasks(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-        const taskColumns = container.querySelectorAll('.task-column');
-        
-        taskColumns.forEach(column => {
-            const taskGroups = column.querySelectorAll('.task-group-item');
-            taskGroups.forEach((group, index) => {
-                if (index === dutyGroupIndex) {
-                    group.classList.add('on-duty');
+    // সহজ এবং নির্ভুল লজিক: সোমবার (দিন ১) থেকে প্রথম গ্রুপ (ইনডেক্স ০) শুরু
+    const todayDayIndex = new Date().getDay(); // 0=রবি, 1=সোম, ..., 6=শনি
+
+    // শনিবার (দিন 6) থেকে সোমবার (দিন 1) পর্যন্ত দিনের পার্থক্য গণনা করা হয়
+    // এবং সেই অনুযায়ী সঠিক গ্রুপ ইনডেক্স বের করা হয়।
+    // এই লজিকে শনিবার ৬ষ্ঠ গ্রুপই সিলেক্ট হবে।
+    const dutyGroupIndex = (todayDayIndex + 5) % 6; // (6 + 5) % 6 = 11 % 6 = 5 (ষষ্ঠ গ্রুপ)
+
+    const taskColumns = container.querySelectorAll('.task-column');
+    
+    taskColumns.forEach(column => {
+        const taskGroups = column.querySelectorAll('.task-group-item');
+        taskGroups.forEach((group, index) => {
+            if (index === dutyGroupIndex) {
+                group.classList.add('on-duty');
+            }
+            const header = group.querySelector('.task-group-header');
+            header.addEventListener('click', () => {
+                const membersList = header.nextElementSibling;
+                const isAlreadyOpen = membersList.style.maxHeight;
+
+                column.querySelectorAll('.task-group-members').forEach(list => {
+                    list.style.maxHeight = null;
+                    list.style.padding = "0 20px 0 40px";
+                });
+
+                if (!isAlreadyOpen) {
+                    membersList.style.padding = "10px 20px 10px 40px";
+                    membersList.style.maxHeight = membersList.scrollHeight + "px";
                 }
+            });
+        });
+    });
+}
                 const header = group.querySelector('.task-group-header');
                 header.addEventListener('click', () => {
                     const membersList = header.nextElementSibling;
@@ -64,3 +82,4 @@ document.addEventListener('DOMContentLoaded', () => {
     setupTasks('daily-work');
 
 });
+
